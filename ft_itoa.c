@@ -6,7 +6,7 @@
 /*   By: ssukhova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 19:27:08 by ssukhova          #+#    #+#             */
-/*   Updated: 2023/11/21 15:24:39 by ssukhova         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:04:17 by ssukhova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,15 @@ static char	*ft_malloc(int n, int len)
 	if (n == 0)
 	{
 		res = (char *)malloc(sizeof(char) + 1);
+		if (!res)
+			return (NULL);
 		res[0] = '0';
 	}
 	else if (n < 0)
 	{
 		res = (char *)malloc((len + 1) * sizeof(char));
+		if (!res)
+			return (NULL);
 		res[0] = '-';
 	}
 	else
@@ -58,6 +62,8 @@ char	*ft_itoa(int n)
 
 	len = ft_count(n);
 	res = ft_malloc(n, len);
+	if (!res)
+		return (NULL);
 	if (n == -2147483648)
 	{
 		res[1] = '2';

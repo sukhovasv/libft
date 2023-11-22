@@ -6,7 +6,7 @@
 /*   By: ssukhova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:52:10 by ssukhova          #+#    #+#             */
-/*   Updated: 2023/11/21 15:27:43 by ssukhova         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:26:56 by ssukhova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{
